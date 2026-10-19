@@ -28,9 +28,32 @@ public class FullNameApplication {
         System.out.print("Suffix: ");
         String suffix = read.nextLine().trim();
 
+        // create a new String that starts with the first name
+        String fullName = firstName;
 
+        // check if the user entered a middle name
+        // the ! means Not, so we are checking if it is Not empty
+        if (!middleName.isEmpty()) {
+            // if there is a middle name, add a space and the middle name
+            fullName = fullName + " " + middleName;
 
+        }
 
+        // always add a space and the last name
+        // don't need an if statement because everybody has a last name
+        fullName = fullName + " " + lastName;
 
+        // check if the user entered a suffix
+        // if suffix is not empty, add it
+        if (!suffix.isEmpty()) {
+            // add a coma, a space, and the suffix
+            fullName = fullName + ", " + suffix;
+
+        }
+        // display the completed full name to the user
+        System.out.println("Full name: " + fullName);
+
+        // close the scanner because we are finished reading input
+        read.close();
     }
 }
